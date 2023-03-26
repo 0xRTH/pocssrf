@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fetch URL Example</title>
+  </head>
+  <body>
+    <script>
+      fetch('https://6dkw65wjtpqdob76cuyhzswcx33urqff.oastify.com')
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    </script>
+  </body>
+</html>
