@@ -4,8 +4,9 @@
     <title>Fetch URL Example</title>
   </head>
   <body>
+    <img src="http://6dkw65wjtpqdob76cuyhzswcx33urqff.oastify.com/img">
     <script>
-      fetch('https://6dkw65wjtpqdob76cuyhzswcx33urqff.oastify.com')
+      fetch('http://6dkw65wjtpqdob76cuyhzswcx33urqff.oastify.com', { mode: 'no-cors'})
         .then(response => response.text())
         .then(data => console.log(data))
         .catch(error => console.error(error));
